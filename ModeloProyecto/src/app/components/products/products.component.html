@@ -1,0 +1,37 @@
+<p>products works!</p>
+
+
+<main class="container my-5">
+
+
+
+<!-- ======================================================================================================================== -->
+
+
+<br><br><br>
+
+
+    <form #taskForm="ngForm" (ngSubmit)="addProduct(taskForm)"> 
+        <!-- // para traer el modulo al hacer submite en el mformulario -->
+        <div class="mb-3">
+          <label for="name" class="form-label">nombre</label>
+          <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+           name="name" [(ngModel)]="productService.selectedProduct.name">
+          
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">precio</label>
+            <input type="number" class="form-control" id="price" aria-describedby="emailHelp" 
+            name="price" [(ngModel)]="productService.selectedProduct.price">
+            
+          </div>
+        
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+
+
+
+
+</main>

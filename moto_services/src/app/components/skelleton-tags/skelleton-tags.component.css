@@ -1,0 +1,42 @@
+section {
+  position: relative;
+  background: linear-gradient(#181818, #434343, #181818);
+  height: 300px;
+}
+
+
+.slogan{
+    display: flex;
+    flex-direction: column;
+position: absolute;
+    /* background-color: blueviolet; */
+    height: 180px;
+    width: 40%;
+left: 100px;
+top: 60px;
+border-radius: 50px 15px;
+box-shadow: 0 10px 50px 0 rgba(255, 255, 255, 0.26);
+
+
+}
+
+.slogan p{
+    display: inline;
+align-items: center;
+    margin: auto;
+color: azure;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Bungee Inline', cursive;
+}
+
+.logo{
+
+    position: absolute;
+    top: -50px;
+    right: 50px;
+    scale: 0.7;
+
+}
+
+

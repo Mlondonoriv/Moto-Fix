@@ -1,0 +1,56 @@
+
+
+main{
+margin: auto;
+margin-top: 50px;
+    width: 80%;
+}
+
+.section1{
+
+    width: 300px;
+}
+.section2{
+
+    width: 45%;
+}
+
+
+.text-area{
+    position: relative;
+
+    height: 400px;
+    
+    margin: auto;
+  
+}
+
+
+.text-area textarea{
+    /* position: absolute; */
+top: 30px;
+    margin: auto;
+    width: 100%;
+}
+
+
+.descripcion-servicio{
+    text-align: center;
+    margin-top: 60px;
+    font-size: 2.5rem;
+}
+
+
+
+ input{
+    text-transform: capitalize;
+ }
+
+ input.placa{
+    text-transform: uppercase;
+ }
+
+ label{
+    color: tomato;
+    font-weight: bold;
+ }

@@ -1,0 +1,159 @@
+<app-skelleton-tags></app-skelleton-tags>
+<main class="">
+
+
+
+  
+  <form #motoForm="ngForm" (ngSubmit)="handleSubmitMoto(motoForm)">
+
+    <input type="hidden" name="_id" [(ngModel)]="motoService.SelectedMotoService._id">
+    <!-- // para traer el modulo al hacer submite en el mformulario -->
+
+    <section class="row">
+      <article class="section1 col">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre Propietario</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            aria-describedby="nsmr"
+            name="name"
+            [(ngModel)]="motoService.SelectedMotoService.name"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="contact_phone" class="form-label">Teléfono</label>
+          <input
+            type="text"
+            class="form-control"
+            id="contact_phone"
+            aria-describedby="nsmr"
+            name="contact_phone"
+            [(ngModel)]="motoService.SelectedMotoService.contact_phone"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            aria-describedby="nsmr"
+            name="email"
+            [(ngModel)]="motoService.SelectedMotoService.email"
+          />
+        </div>
+      </article>
+
+      <article class="section2 col">
+        <div class="mb-3">
+          <label for="brand" class="form-label">Marca</label>
+          <input
+            type="text"
+            class="form-control"
+            id="brand"
+            aria-describedby="nsmr"
+            name="brand"
+            [(ngModel)]="motoService.SelectedMotoService.brand"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="model" class="form-label">Modelo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="model"
+            aria-describedby="nsmr"
+            name="model"
+            [(ngModel)]="motoService.SelectedMotoService.model"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="year" class="form-label">Año</label>
+          <input
+            type="text"
+            class="form-control"
+            id="year"
+            aria-describedby="nsmr"
+            name="year"
+            [(ngModel)]="motoService.SelectedMotoService.year"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="plate" class="form-label">Placa</label>
+          <input
+            type="text"
+            class="form-control placa"
+            id="plate"
+            aria-describedby="nsmr"
+            name="plate"
+            [(ngModel)]="motoService.SelectedMotoService.plate"
+          />
+        </div>
+      </article>
+    </section>
+    <div class="mb-3 text-area">
+      <p class="descripcion-servicio">Descripción detallada del servicio</p>
+      <textarea
+        rows="10"
+        cols="200"
+        name="issue_description"
+        [(ngModel)]="motoService.SelectedMotoService.issue_description"
+      ></textarea>
+    </div >
+
+    <ng-container *ngIf="motoService.SelectedMotoService._id; else create">
+      
+      <div>
+        <button type="submit" class="btn btn-warning">Actualizar servicio</button>
+      </div>
+    </ng-container>
+
+    <ng-template #create>
+      <button type="submit" class="btn btn-primary">Crear Servicio</button>
+    </ng-template>
+  </form>
+
+  <ul *ngFor="let motoServiceVar of motoService.Moto_Service_array">
+    <li>
+      <div class="object">
+        <ul>
+     
+        <li>{{ motoServiceVar._id }}</li>
+        <li>{{ motoServiceVar.brand }}</li>
+        <li>{{ motoServiceVar.model }}</li>
+        <li>{{ motoServiceVar.year }}</li>
+        <li>{{ motoServiceVar.plate }}</li>
+        <li>{{ motoServiceVar.contact_phone }}</li>
+       <li>{{ motoServiceVar.email }}</li> 
+        <li>{{ motoServiceVar.issue_description }}</li>
+       <li>{{ motoServiceVar.name }}</li> 
+      </ul>
+      </div>
+      
+      <div class="d-flex gap-4">
+        <button
+          type="button"
+          class="btn btn-info"
+          (click)="editMoto(motoServiceVar)"
+        >
+          EDIT
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-danger"
+          (click)="removeMoto(motoServiceVar._id)"
+        >
+          DELETE
+        </button>
+      </div>
+    </li>
+  </ul>
+</main>

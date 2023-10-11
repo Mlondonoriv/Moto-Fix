@@ -1,0 +1,103 @@
+
+<app-top-tags>
+
+
+  
+</app-top-tags>
+  
+
+
+<main > 
+  <!-- <section class="d-flex position-relative">
+    <img
+      class="img-fluid w-25 position-absolute top-0 start-0"
+      src="../../../assets/img/logo umami no bg.png"
+      alt=""
+    />
+    <div class=" w-100 d-flex align-items-center">
+      <img
+        class="img-fluid w-100 br-3  border-1 "
+        src="../../../assets/img/umami header 2.png"
+        alt=""
+      />
+    </div>
+  </section> -->
+ 
+
+
+    <!-- <section id="form" class="oculto d-flex justify-content-center"> -->
+      <article
+        id="formInt"
+        class="container d-flex bg-danger justify-content-center"
+      >
+        <form (submit)="login()"
+          action=""
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+
+        <h4 class="form-title mb-5 ">INICIAR SESIÓN </h4>
+
+        <div class="inputSection ">
+          <label for="Email" class="form-label">Email </label>
+
+          <input 
+          class="form-control"
+          id="tituloIn" 
+          type="text" 
+          placeholder="..." 
+          id="Email" name="email" [(ngModel)]="user.email" aria-describedby="emailHelp"
+          required />
+        </div>
+
+          <div class="inputSection ">
+
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+            class="form-control"
+              id="institucionIn"
+              type="password"
+              placeholder="..."
+              id="password" name="password" [(ngModel)]="user.password"
+              required
+            />
+          </div>
+
+
+          
+
+          <button
+            class="button mt-5"
+            type="submit"
+            
+          >
+            Ingresar
+          </button>
+        </form>
+      </article>
+    <!-- </section> -->
+ 
+</main>
+
+
+<!-- <form (submit)="login()">  
+  <div class="mb-3">
+    <label for="Email" class="form-label">Email </label>
+
+    <input type="email" class="form-control" id="Email" name="email" [(ngModel)]="user.email" aria-describedby="emailHelp">  
+
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
+  </div>
+  <div class="mb-3">
+
+    <label for="password" class="form-label">Contraseña</label>
+
+    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password">   
+
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->

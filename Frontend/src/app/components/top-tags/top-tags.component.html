@@ -1,0 +1,116 @@
+<header class="header-img bg-body-tertiary">
+  <section class="d-flex position-relative">
+    <img
+      class="img-fluid w-25 position-absolute top-0 start-0"
+      src="../../../assets/img/logo umami no bg.png"
+      alt=""
+    />
+    <div class="w-100 d-flex align-items-center">
+      <img
+        class="img-fluid w-100 br-3 border-1"
+        src="../../../assets/img/umami header 2.png"
+        alt=""
+      />
+    </div>
+  </section>
+
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" routerLink="">Inicio</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+             routerLink="./about-umami"
+              >Nosotros</a
+            >
+          </li>
+        
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle text-light"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Categorias
+            </a>
+            <ul class="dropdown-menu bg-dark">
+              <li>
+                <a class="dropdown-item text-light" routerLink="/combos"
+                  >Combos</a
+                >
+              </li>
+              
+              <li><hr class="dropdown-divider bg-light" /></li>
+              <li>
+                <a class="dropdown-item text-light" routerLink="/dressings">Aderezos</a>
+              </li>
+              <li><hr class="dropdown-divider bg-light" /></li>
+              <li>
+                <a class="dropdown-item text-light" routerLink="/dips">Dips</a>
+              </li>
+              <li><hr class="dropdown-divider bg-light" /></li>
+              <li>
+                <a class="dropdown-item text-light" routerLink="/all-products"
+                  >Todos</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav me-end mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              routerLink="/login"
+              >Registro</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              routerLink="/prueba"
+              >prueba</a
+            >
+          </li>
+          <li>
+            <a
+              class="nav-link active text-light"
+              aria-current="page"
+              routerLink="/favorites"
+              >Favoritos</a
+            >
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Buscar ..."
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-dark text-light" type="submit">
+            Buscar
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
