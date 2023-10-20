@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const moto_schema = new Schema({
   brand: { type: String, require: true },
   model: { type: String, require: true },
-  year: { type: Date, require: true },
+  year: { type: Number, require: true },
   plate: { type: String, require: true },
   name:{type:String,require:true},
   contact_phone:{type:Number, require:true},

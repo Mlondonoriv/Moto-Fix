@@ -14,18 +14,20 @@ export class MotosService {
 
    }
    urlBackend = "http://localhost:5000/motos"; 
+   
+   
    Moto_Service_array:Motos[] = []; // creo un objeto que llama la clase importado donde voy a guardar las tareas de  mi api
  
    SelectedMotoService:Motos = {
  
-    brand:" ",
-    model:" ",
-    year: null ,
-    plate:" ",
-    name:" ",
-    contact_phone:" ",
-    email:" ",
-    issue_description:" ",
+    brand:"" ,
+    model:"",
+    year: "" ,
+    plate:"",
+    name:"",
+    contact_phone:"",
+    email:"",
+    issue_description:"",
    }
  
  // en la funcion recibo el product qu es de tipo Product ( el schema) peticion al api
@@ -42,7 +44,12 @@ export class MotosService {
 
 
 
-   readProduct(){}
+   readMoto(id: string,){
+
+    return this.http.get<any>(`${this.urlBackend}/${id}`);
+
+
+   }
 
 
    updateMoto(moto:Motos ){

@@ -1,159 +1,497 @@
 <app-skelleton-tags></app-skelleton-tags>
-<main class="">
-
-
-
-  
+<main>
   <form #motoForm="ngForm" (ngSubmit)="handleSubmitMoto(motoForm)">
-
-    <input type="hidden" name="_id" [(ngModel)]="motoService.SelectedMotoService._id">
+    <input
+      type="hidden"
+      name="_id"
+      [(ngModel)]="motoService.SelectedMotoService._id"
+    />
     <!-- // para traer el modulo al hacer submite en el mformulario -->
 
-    <section class="row">
-      <article class="section1 col">
-        <div class="mb-3">
-          <label for="name" class="form-label">Nombre Propietario</label>
+    <section class="section1 col form-box">
+      <article class="form-left">
+        <div class="input-box">
           <input
             type="text"
-            class="form-control"
-            id="name"
-            aria-describedby="nsmr"
+            id="Email"
             name="name"
             [(ngModel)]="motoService.SelectedMotoService.name"
+            aria-describedby="emailHelp"
+            required
           />
+          <label>Nombre Propietario</label>
+          <i class="bi bi-person-circle"></i>
         </div>
 
-        <div class="mb-3">
-          <label for="contact_phone" class="form-label">Teléfono</label>
+        <div class="input-box">
           <input
-            type="text"
-            class="form-control"
-            id="contact_phone"
-            aria-describedby="nsmr"
+            type="number"
+            id="Email"
             name="contact_phone"
             [(ngModel)]="motoService.SelectedMotoService.contact_phone"
+            aria-describedby="emailHelp"
+            required
           />
+          <label>Número de contacto</label>
+          <i class="bi bi-phone-fill"></i>
         </div>
 
-        <div class="mb-3">
-          <label for="email" class="form-label">E-mail</label>
+        <div class="input-box">
           <input
-            type="text"
-            class="form-control"
+            type="email"
             id="email"
-            aria-describedby="nsmr"
             name="email"
             [(ngModel)]="motoService.SelectedMotoService.email"
+            required
           />
+          <label>E-mail</label>
+          <i class="bi bi-envelope-fill"></i>
         </div>
-      </article>
 
-      <article class="section2 col">
-        <div class="mb-3">
-          <label for="brand" class="form-label">Marca</label>
+        <div class="input-box">
           <input
             type="text"
-            class="form-control"
-            id="brand"
-            aria-describedby="nsmr"
+            id="Brand"
             name="brand"
             [(ngModel)]="motoService.SelectedMotoService.brand"
+            required
           />
+          <label>Marca</label>
+          <i class="bi bi-square-fill"></i>
         </div>
 
-        <div class="mb-3">
-          <label for="model" class="form-label">Modelo</label>
+        <div class="input-box">
           <input
             type="text"
-            class="form-control"
             id="model"
-            aria-describedby="nsmr"
             name="model"
             [(ngModel)]="motoService.SelectedMotoService.model"
+            required
           />
+          <label>Modelo</label>
+          <i class="bi bi-crosshair2"></i>
         </div>
 
-        <div class="mb-3">
-          <label for="year" class="form-label">Año</label>
+        <div class="input-box">
           <input
-            type="text"
-            class="form-control"
-            id="year"
-            aria-describedby="nsmr"
+            type="number"
+            id="Year"
             name="year"
             [(ngModel)]="motoService.SelectedMotoService.year"
+            required
           />
+          <label>Año</label>
+          <i class="bi bi-calendar-event-fill"></i>
         </div>
 
-        <div class="mb-3">
-          <label for="plate" class="form-label">Placa</label>
+        <div class="input-box">
           <input
             type="text"
-            class="form-control placa"
             id="plate"
-            aria-describedby="nsmr"
             name="plate"
             [(ngModel)]="motoService.SelectedMotoService.plate"
+            required
           />
+          <label>PLaca</label>
+          <i class="bi bi-aspect-ratio-fill"></i>
         </div>
       </article>
+      <article class="form-right">
+        <!-- <h3>Ingresa detalles del servicio</h3> -->
+
+        <!-- <textarea name="issue_description"[(ngModel)]="motoService.SelectedMotoService.issue_description" placeholder="hola"></textarea> -->
+
+        <!-- <div class=" serv-detal-container d-flex justify-content-between">
+          <label class="serv-detail" id="issue_description" >Detalles del Servicio</label>
+          <i class=" detail-icon bi bi-list-task"></i>
+
+        </div> -->
+
+        <textarea
+          class="textarea"
+          name="issue_description"
+          [(ngModel)]="motoService.SelectedMotoService.issue_description"
+        ></textarea>
+        <span class="label"
+          ><span class="span1">Detalles del Servicio</span>
+          <span class="span2"><i class="detail-icon bi bi-list-task"></i></span>
+        </span>
+      </article>
     </section>
-    <div class="mb-3 text-area">
-      <p class="descripcion-servicio">Descripción detallada del servicio</p>
-      <textarea
-        rows="10"
-        cols="200"
-        name="issue_description"
-        [(ngModel)]="motoService.SelectedMotoService.issue_description"
-      ></textarea>
-    </div >
 
     <ng-container *ngIf="motoService.SelectedMotoService._id; else create">
-      
-      <div>
-        <button type="submit" class="btn btn-warning">Actualizar servicio</button>
-      </div>
+      <!-- <div>
+        <button type="submit" class="btn btn-warning">
+          Actualizar servicio
+        </button>
+      </div> -->
     </ng-container>
 
     <ng-template #create>
-      <button type="submit" class="btn btn-primary">Crear Servicio</button>
-    </ng-template>
-  </form>
-
-  <ul *ngFor="let motoServiceVar of motoService.Moto_Service_array">
-    <li>
-      <div class="object">
-        <ul>
-     
-        <li>{{ motoServiceVar._id }}</li>
-        <li>{{ motoServiceVar.brand }}</li>
-        <li>{{ motoServiceVar.model }}</li>
-        <li>{{ motoServiceVar.year }}</li>
-        <li>{{ motoServiceVar.plate }}</li>
-        <li>{{ motoServiceVar.contact_phone }}</li>
-       <li>{{ motoServiceVar.email }}</li> 
-        <li>{{ motoServiceVar.issue_description }}</li>
-       <li>{{ motoServiceVar.name }}</li> 
-      </ul>
+      <div class="create-button-container">
+        <button type="submit" class="create-button" >Crear Servicio</button>
       </div>
-      
-      <div class="d-flex gap-4">
-        <button
+
+    </ng-template>
+
+    <section class="reset-container">
+      <button type="reset" class="reset-button rotate-center" (click)="resetForm(motoForm)">
+        <i class="bi bi-arrow-clockwise"></i>
+        
+        Resetear
+      </button>
+     
+    </section>
+  </form>
+  <figure>
+  <img class=" moto-icon-enter slide-in-left" width="51" height="51" src="https://img.icons8.com/external-stick-figures-gan-khoon-lay/51/external-motorbike-police-station-policeman-motorcycle-car-report-interrogation-stick-figures-gan-khoon-lay.png" alt="external-motorbike-police-station-policeman-motorcycle-car-report-interrogation-stick-figures-gan-khoon-lay"/>
+</figure>
+
+  <!-- ====================================================================================================== -->
+</main>
+
+<section class="cards-section">
+  <div class="row">
+    <div
+      class=" card-container gap-3"
+      *ngFor="let motoServiceVar of motoService.Moto_Service_array"
+    >
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{ motoServiceVar.name }}</h4>
+
+          <h6>
+            <i class="bi bi-envelope-fill me-2"></i>
+            {{ motoServiceVar.email }}
+          </h6>
+          <h6>
+            <i class="bi bi-phone-fill me-2"></i>
+            {{ motoServiceVar.contact_phone }}
+          </h6>
+
+          <hr />
+
+          <ul class="moto-card-container">
+            <div class="li-container">
+              <span class="moto-marker material-symbols-outlined me-4">
+                sports_motorsports
+              </span>
+              <li>
+                {{ motoServiceVar.brand }}
+              </li>
+            </div>
+
+            <div class="li-container">
+              <span class="moto-marker material-symbols-outlined me-4">
+                sports_motorsports
+              </span>
+              <li>
+                {{ motoServiceVar.model }}
+              </li>
+            </div>
+
+            <div class="li-container">
+              <span class="moto-marker material-symbols-outlined me-4">
+                sports_motorsports
+              </span>
+              <li>
+                {{ motoServiceVar.year }}
+              </li>
+            </div>
+
+            <div class="li-container">
+              <span class="moto-marker material-symbols-outlined me-4">
+                sports_motorsports
+              </span>
+              <li>
+                {{ motoServiceVar.plate }}
+              </li>
+            </div>
+          </ul>
+        </div>
+        
+          <div class="img-moto"> <div class="upload-img"><i class="bi bi-file-arrow-up-fill"></i></div></div>
+         
+        
+      </div>
+      <div class=" btn-container d-flex gap-4 mt-3 justify-content-between ">
+        <!-- ===================================================================
+    
+    
+    -->
+
+        <!-- Button trigger modal -->
+
+        <div class=" btn-container-2 ">
+
+          <button
           type="button"
-          class="btn btn-info"
+          class="edit-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
           (click)="editMoto(motoServiceVar)"
         >
-          EDIT
-        </button>
+Editar        </button>
 
-        <button
-          type="button"
-          class="btn btn-danger"
-          (click)="removeMoto(motoServiceVar._id)"
+<button
+type="button"
+class="elim-confirm"
+data-bs-toggle="modal"
+data-bs-target="#exampleModal"
+>
+Eliminar
+</button>
+
+        </div>
+ 
+
+        <div>
+         
+
+          <!-- Modal -->
+          <div
+            class="modal"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2
+                    class="modal-title fs-5 tracking-in-expand"
+                    id="exampleModalLabel"
+                  >
+                    Estas seguro que quieres eliminar el servicio?
+                  </h2>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body modal-warning-icon">
+                  <div class="roll-in-left">
+                    <i
+                      class="bi bi-exclamation-triangle-fill roll-in-left exclamation-icon"
+                    ></i>
+
+                  </div>
+                </div>
+                <div
+                  class="modal-confirm modal-footer d-flex justify-content-between"
+                >
+                  <button
+                    type="button"
+                    class="volver-btn"
+                    data-bs-dismiss="modal"
+                  >
+                    <i class="bi bi-arrow-return-left"></i>
+                    Volver
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-danger elim-confirm"
+                    (click)="removeMoto(motoServiceVar._id)"
+                  >
+                    <i class="bi bi-trash3-fill"></i>
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div
+          class="modal"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
         >
-          DELETE
-        </button>
+          <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                  Editar Servicio!
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close close-btn"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  (click)="resetForm(motoForm)"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <!-- -================================================================================= -->
+
+                <form
+                  #motoForm="ngForm"
+                  (ngSubmit)="handleSubmitMoto(motoForm)"
+                >
+                  <input
+                    type="hidden"
+                    name="_id"
+                    [(ngModel)]="motoService.SelectedMotoService._id"
+                  />
+                  <!-- // para traer el modulo al hacer submite en el mformulario -->
+
+                  <section class="section1 col form-box">
+                    <article class="form-left">
+                      <div class="input-box">
+                        <input
+                          type="text"
+                          id="Email"
+                          name="name"
+                          [(ngModel)]="motoService.SelectedMotoService.name"
+                          aria-describedby="emailHelp"
+                          required
+                        />
+                        <label>Nombre Propietario</label>
+                        <i class="bi bi-person-circle"></i>
+                      </div>
+
+                      <div class="input-box">
+                        <input
+                          type="number"
+                          id="Email"
+                          name="contact_phone"
+                          [(ngModel)]="
+                            motoService.SelectedMotoService.contact_phone
+                          "
+                          aria-describedby="emailHelp"
+                          required
+                        />
+                        <label>Número de contacto</label>
+                        <i class="bi bi-phone-fill"></i>
+                      </div>
+
+                      <div class="input-box">
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          [(ngModel)]="motoService.SelectedMotoService.email"
+                          required
+                        />
+                        <label>E-mail</label>
+                        <i class="bi bi-envelope-fill"></i>
+                      </div>
+
+                      <div class="input-box">
+                        <input
+                          type="text"
+                          id="Brand"
+                          name="brand"
+                          [(ngModel)]="motoService.SelectedMotoService.brand"
+                          required
+                        />
+                        <label>Marca</label>
+                        <i class="bi bi-square-fill"></i>
+                      </div>
+
+                      <div class="input-box">
+                        <input
+                          type="text"
+                          id="model"
+                          name="model"
+                          [(ngModel)]="motoService.SelectedMotoService.model"
+                          required
+                        />
+                        <label>Modelo</label>
+                        <i class="bi bi-crosshair2"></i>
+                      </div>
+
+                      <div class="input-box">
+                        <input
+                          type="number"
+                          id="Year"
+                          name="year"
+                          [(ngModel)]="motoService.SelectedMotoService.year"
+                          required
+                        />
+                        <label>Año</label>
+                        <i class="bi bi-calendar-event-fill"></i>
+                      </div>
+
+                      <div class="input-box">
+                        <input
+                          type="text"
+                          id="plate"
+                          name="plate"
+                          [(ngModel)]="motoService.SelectedMotoService.plate"
+                          required
+                        />
+                        <label>PLaca</label>
+                        <i class="bi bi-aspect-ratio-fill"></i>
+                      </div>
+                    </article>
+                    <article class="form-right">
+                      <!-- <h3>Ingresa detalles del servicio</h3> -->
+
+                      <!-- <textarea name="issue_description"[(ngModel)]="motoService.SelectedMotoService.issue_description" placeholder="hola"></textarea> -->
+                      <textarea
+                      class="text-area"
+                        name="issue_description"
+                       
+                        [(ngModel)]="
+                          motoService.SelectedMotoService.issue_description
+                        "
+                      ></textarea>
+                    </article>
+                  </section>
+
+                  <ng-container
+                    *ngIf="motoService.SelectedMotoService._id; else create"
+                  >
+                    <div>
+                      <button
+                        type="submit"
+                        class="btn btn-warning actualizar-btn"
+                        (click)="updateByModal(motoService.SelectedMotoService)"
+                      >
+                        Actualizar servicio
+                      </button>
+                    </div>
+
+                    <!-- modal para confirmar eliminar servicio  -->
+                  </ng-container>
+
+                  <ng-template #create>
+                    <div class="create-button-container">
+                      <button type="submit" class="create-button">
+                        Crear Servicio
+                      </button>
+                    </div>
+                  </ng-template>
+
+  
+                </form>
+
+                ...
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="close-button"
+                  data-bs-dismiss="modal"
+                  (click)="resetForm(motoForm)"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </li>
-  </ul>
-</main>
+    </div>
+  </div>
+</section>

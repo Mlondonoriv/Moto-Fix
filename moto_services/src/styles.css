@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+  @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Orbitron:wght@700&display=swap');
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+
+
+:root {
+    --clr-blue-dark: #151F30;
+    --clr-blue-mid: #103778;
+    --clr-blue-soft: #0593A2;
+    --clr-red-pale: #FF7A48;
+    --clr-red: #E3371E;
+
+
+/* --clr-primary:#F2A922;
+--clr-secondary:#D9851E;
+--clr-tertiary:#A66933;
+--clr-primary-red:#D91A2A;
+--clr-secondary-red:#D92344; */
+
+
+
+/* --clr-primary:#F2E852;
+--clr-secondary:#F2C849;
+--clr-tertiary:#262521;
+--clr-primary-red:#BF871F;
+--clr-secondary-red:#BFBDB8; */
+
+
+  }

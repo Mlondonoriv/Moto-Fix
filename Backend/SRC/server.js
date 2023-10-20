@@ -37,6 +37,7 @@ server.use("/products/",product_routes);
 
 
 // le estoy diciendo que use la ruta users que el nombre se lo asigno yo para poder llamar los endpoints 
+
 server.use("/motos",moto_routes);
 server.get("/",(request, response) => {
     // response.json({message:" hola desde la ruta raiz"})

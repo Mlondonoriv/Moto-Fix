@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+:root {
+  --clr-blue-dark: #151f30;
+  --clr-blue-mid: #103778;
+  --clr-blue-soft: #0593a2;
+  --clr-red-pale: #ff7a48;
+  --clr-red: #e3371e;
+  --bg-img: ;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--clr-blue-dark);
+}
+
+/* .slogan {
+  background-color: blueviolet;
+  height: 180px;
+  width: 40%;
+
+  border: solid 2px var(--clr-blue-soft);
+  border-radius: 50px 15px;
+  box-shadow: 0 1px 10px 0 var(--clr-blue-soft);
+} */
+.slogan p {
+  
+  color: azure;
+  font-size: 4rem;
+  font-family: "Faster One";
+  text-align: center;
+}
+
+.wrapper {
+  margin: 50px 0;
+  display: flex;
+  position: relative;
+  width: 750px;
+  height: 200px;
+  background: transparent;
+  border: 2px solid var(--clr-red);
+  overflow: hidden;
+  box-shadow: 0 0 25px var(--clr-red);
+  border-radius: 50px 15px;
+}
+
+.wrapper .display-clock {
+  width: 65%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper .fullDate {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time {
+  color: #fff;
+  font-size: clamp(20px, 50px, 75px);
+
+  font-family: "Orbitron", sans-serif;
+  max-width: fit-content;
+}
+
+.day {
+  color: #fff;
+  font-size: 4vw;
+}
+
+.date {
+  color: #fff;
+  font-size: 1vw;
+}
+
+.wrapper .bg-animate {
+  position: absolute;
+  top: -4px;
+  right: -120px;
+  width: 850px;
+  height: 600px;
+  background: linear-gradient(45deg, var(--clr-blue-soft), var(--clr-blue-mid));
+  border-bottom: 3px solid var(--clr-red);
+  transform: rotate(10deg) skewY(40deg);
+  transform-origin: bottom right;
+}
+
+.btn {
+  position: relative;
+  width: 10%;
+  height: 45px;
+  background: transparent;
+  border: 2px solid var(--clr-blue-soft);
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(
+    var(--clr-blue-soft),
+    var(--clr-blue-mid),
+    var(--clr-blue-soft),
+    var(--clr-blue-mid)
+  );
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  top: 0;
+  scale: 1.1;
+}
+.btn:hover {
+  scale: 1.01;
+}

@@ -19,7 +19,7 @@
   "name": "backend",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/ondex.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "version": "1.0.0"

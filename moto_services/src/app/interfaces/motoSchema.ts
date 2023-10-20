@@ -1,5 +1,5 @@
 export class Motos{
-    constructor (_id: string, brand:string, model:string, year:Date,plate:string,
+    constructor (_id: string, brand:string, model:string, year:string,plate:string,
 name:string,
 contact_phone:string,
 email:string,
@@ -16,15 +16,15 @@ issue_description:string ){
     this.name = name;
     
     }
-    _id?:string;
-    brand:string;
-    model:string;
-    year:Date | null ;
-    plate:string;
-    contact_phone:string;
-    email:string;
-    issue_description:string;
-    name:string;
+    _id?:string ;
+    brand:string ;
+    model:string ;
+    year:string  ;
+    plate:string ;
+    contact_phone:string ;
+    email:string ;
+    issue_description:string ;
+    name:string ;
     }
 
 
