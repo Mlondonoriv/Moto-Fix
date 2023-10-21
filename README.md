@@ -4,6 +4,4 @@ MOTO-FIX es la solución perfecta para talleres de motos de pequeño y mediano t
 mateo londoño
 
 
-titulo
-descripcion 
-autor 
+
